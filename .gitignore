@@ -1,0 +1,5 @@
+artifacts/*
+raw/*
+.venv/
+__pycache__/
+sources.txt

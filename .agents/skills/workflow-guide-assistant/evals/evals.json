@@ -1,0 +1,42 @@
+[
+  {
+    "name": "full_workflow_orientation",
+    "prompt": "How do I use this repo from sources.txt to a final report?",
+    "checks": [
+      "explains the canonical sequence from sources.txt to reports",
+      "recommends the relevant operational skills in order",
+      "includes immediate prompt examples",
+      "stays instructional instead of performing the workflow"
+    ]
+  },
+  {
+    "name": "stage_routing_from_sources",
+    "prompt": "I have sources.txt and want transcripts next. Which skill should I use?",
+    "checks": [
+      "identifies source intake as the current stage",
+      "routes to source-intake-orchestrator",
+      "mentions likely outputs such as transcripts and inventory",
+      "includes a summonable prompt example"
+    ]
+  },
+  {
+    "name": "stage_routing_from_digests",
+    "prompt": "I already have files in artifacts/digests. What should I use now?",
+    "checks": [
+      "identifies digest-to-report as the current stage when the user wants prose",
+      "routes to artifact-digest-report-writer",
+      "mentions artifacts-to-json-distiller only when a digest is still missing or weak",
+      "keeps the answer concise and action-oriented"
+    ]
+  },
+  {
+    "name": "new_user_entrypoint",
+    "prompt": "I'm new here. Which skill should I start with?",
+    "checks": [
+      "uses sources.txt as the default starting point",
+      "points new users to workflow-guide-assistant for orientation and source-intake-orchestrator for execution",
+      "mentions common setup blockers such as yt-dlp only if relevant",
+      "does not overwhelm the user with every detail at once"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "skill_name": "artifact-digest-report-writer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create an executive brief from the JSON digests in artifacts/digests/. Keep it professional, concise, and cite the digest and source artifacts where available.",
+      "expected_output": "A Markdown executive brief under artifacts/reports/ with executive summary, takeaways, implications, risks, next steps, and source notes.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Write a critical review from artifacts/digests/. Focus on evidence quality, contradictions, weak claims, bias, missing context, and confidence levels.",
+      "expected_output": "A Markdown critical review under artifacts/reports/ that identifies strongest evidence, weakest claims, contradictions, framing risks, missing context, and source notes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Turn the artifact digest into a decision memo with recommendation, options considered, tradeoffs, risks, and next actions.",
+      "expected_output": "A Markdown decision memo under artifacts/reports/ with a clear recommendation or a clear statement that more evidence is needed.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Create a holistic analytical report from artifacts/digests/. If the digest is thin, inspect the referenced original artifacts and record that fallback in Source Notes.",
+      "expected_output": "A Markdown analytical report under artifacts/reports/ that uses digest JSON first and records any original artifact fallback reads.",
+      "files": []
+    }
+  ]
+}

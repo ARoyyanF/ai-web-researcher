@@ -1,0 +1,46 @@
+[
+  {
+    "name": "mixed_source_intake",
+    "prompt": "Process sources.txt into artifacts. It contains YouTube links and regular web URLs. Categorize the URLs, extract transcripts, collect web-search artifacts for the other URLs, refresh artifact_inventory.json, and recap failures.",
+    "checks": [
+      "uses tools/categorize-sources.py instead of reimplementing categorization",
+      "runs transcript-extractor.py against raw/youtube-url.txt with --output-dir artifacts/transcripts and --clean-output-dir artifacts/transcripts_clean",
+      "uses harness-web-research-scraper behavior for raw/other-url.txt",
+      "refreshes artifacts/digests/artifact_inventory.json",
+      "recaps source counts, transcript failures, web limitations, and inventory status"
+    ]
+  },
+  {
+    "name": "youtube_only_intake",
+    "prompt": "Ingest sources.txt. It only has YouTube URLs. Produce transcript artifacts and update the inventory.",
+    "checks": [
+      "categorizes sources.txt first",
+      "extracts YouTube transcripts when raw/youtube-url.txt has URLs",
+      "skips web collection cleanly when raw/other-url.txt is empty",
+      "refreshes artifact_inventory.json",
+      "reports YouTube count and transcript success/failure counts"
+    ]
+  },
+  {
+    "name": "web_only_intake",
+    "prompt": "Process sources.txt into local artifacts. There are no YouTube URLs, only normal web links.",
+    "checks": [
+      "categorizes sources.txt first",
+      "skips transcript extraction cleanly when raw/youtube-url.txt is empty",
+      "collects non-YouTube URLs into artifacts/web-searches using harness web tooling",
+      "records blocked or partial pages as limitations",
+      "refreshes artifact_inventory.json"
+    ]
+  },
+  {
+    "name": "failure_reporting",
+    "prompt": "Run source intake from sources.txt and make sure failures are not hidden. Some YouTube transcript downloads may fail and some web pages may be blocked.",
+    "checks": [
+      "uses --continue-on-error for transcript extraction",
+      "preserves or summarizes yt-dlp failures",
+      "records blocked, paywalled, unavailable, or partial web pages",
+      "does not treat repeated inventory refresh success as proof all extraction succeeded",
+      "final recap includes failures, fallbacks, skipped branches, and inventory refresh status"
+    ]
+  }
+]

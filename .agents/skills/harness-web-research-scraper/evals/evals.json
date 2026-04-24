@@ -1,0 +1,29 @@
+{
+  "skill_name": "harness-web-research-scraper",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Search the web for recent sources about AI's effect on entry-level hiring and save the source collection under artifacts/web-searches/. Refresh the artifact inventory afterward.",
+      "expected_output": "A Markdown web-search artifact with source URLs, access metadata, limitations, and notes for downstream distillation, plus a refreshed artifact inventory.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Open these three URLs, extract the visible source material into a Markdown artifact, and record any paywalls, blocked pages, or partial extraction issues.",
+      "expected_output": "A source-oriented Markdown artifact under artifacts/web-searches/ that records each URL, access timestamp, source type, relevance, and limitations.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Collect sources for a web-backed research note on the current software engineering job market. Keep the artifact factual, not a final report.",
+      "expected_output": "A Markdown source collection that uses harness web tools, preserves provenance, avoids unsupported synthesis, and points to downstream distillation.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Search for official documentation and current references for a fast-changing developer tool, save the findings to artifacts/web-searches/, and index them for later JSON distillation.",
+      "expected_output": "A Markdown source collection with strict provenance and a refreshed artifact_inventory.json.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "skill_name": "artifacts-to-json-distiller",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Digest everything under artifacts/ into one JSON file for downstream LLM analysis. Preserve provenance, confidence, contradictions, and gaps.",
+      "expected_output": "A single valid JSON digest that inventories the corpus and distills it into evidence-aware sections.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Analyze all artifacts and build a compact JSON knowledge bundle focused on AI, jobs, hiring, and labor market narratives. Do not write prose outside JSON.",
+      "expected_output": "A topic-focused JSON digest with grounded claims, themes, contradictions, and an llm_brief section.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Create an LLM-friendly JSON digest of artifacts/ and explicitly record any skipped or unreadable files instead of silently dropping them.",
+      "expected_output": "A valid JSON artifact digest with source inventory entries for included and skipped files, plus corresponding gaps.",
+      "files": []
+    }
+  ]
+}
