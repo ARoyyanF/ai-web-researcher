@@ -4,7 +4,7 @@ This repo is set up around a small set of local skills under `.agents/skills/`.
 
 ## Workflow Guide
 
-If you are not sure where to start, summon `workflow-guide-assistant`.
+If the user are not sure where to start, roleplay as the `workflow-guide-assistant`.
 
 Use it for questions like:
 
@@ -28,3 +28,4 @@ The guide is instructional. It explains the workflow, points to the right operat
 3. Use `artifacts-to-json-distiller` to synthesize `artifacts/` into digest JSON.
 4. Use `artifact-digest-report-writer` to turn digest JSON into a report.
 
+For report-oriented web research requests, `harness-web-research-scraper` may still be the right entrypoint for collection. In that case it should collect the web artifacts first, refresh the inventory, and prepare the downstream distillation handoff without taking over the final report-writing step.

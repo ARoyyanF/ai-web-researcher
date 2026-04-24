@@ -8,7 +8,7 @@ description: Turn JSON digests in artifacts/digests/ into professional Markdown 
 Use this skill to write professional Markdown reports from JSON digests under `artifacts/digests/`.
 
 Default input root: `artifacts/digests/`
-Default output root: `artifacts/reports/`
+Default output root: `outputs/`
 Default output format: Markdown only
 
 This is a downstream companion to `artifacts-to-json-distiller`. Use digest JSON as the main source of truth, then inspect original artifacts only when the digest lacks enough evidence, context, or citation detail.
@@ -37,7 +37,7 @@ If the user asks for JSON distillation first, use `artifacts-to-json-distiller` 
 - citation anchors are missing
 - a claim needs context before it can be written accurately
 - the user asks for especially critical or detailed treatment
-7. Write one Markdown report to `artifacts/reports/<variant-name>.md` unless the user specifies another path.
+7. Write one Markdown report to `outputs/<variant-name>.md` unless the user specifies another path.
 8. Include a `Source Notes` section listing digest files used and any original artifacts inspected.
 
 ## Variant selection
@@ -78,12 +78,12 @@ Write like a sharp analyst, not a transcript summarizer.
 
 Use these default filenames:
 
-- `artifacts/reports/executive-brief.md`
-- `artifacts/reports/analytical-report.md`
-- `artifacts/reports/critical-review.md`
-- `artifacts/reports/decision-memo.md`
+- `outputs/executive-brief.md`
+- `outputs/analytical-report.md`
+- `outputs/critical-review.md`
+- `outputs/decision-memo.md`
 
-Create `artifacts/reports/` if it does not exist.
+Create `outputs/` if it does not exist.
 
 ## Source notes
 

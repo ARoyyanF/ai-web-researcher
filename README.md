@@ -41,6 +41,11 @@ This repo has a staged workflow:
 |   |-- transcripts/
 |   |-- transcripts_clean/
 |   `-- web-searches/
+|-- outputs/
+|   |-- analytical-report.md
+|   |-- critical-review.md
+|   |-- decision-memo.md
+|   `-- executive-brief.md
 |-- raw/
 |   |-- other-url.txt
 |   `-- youtube-url.txt
@@ -208,6 +213,8 @@ The web research skill lives at [.agents/skills/harness-web-research-scraper/SKI
 
 Its job is to use the LLM harness web tooling to collect source-oriented web research into Markdown files under `artifacts/web-searches/`.
 
+By default it is a source-collection skill. If the user's real deliverable is a stakeholder-facing Markdown report, it should still collect the web artifacts first, refresh the inventory, and hand off the relevant newly created or directly relevant artifacts to `artifacts-to-json-distiller` so `artifact-digest-report-writer` has digest-ready inputs.
+
 Use it when you want to:
 
 - search the web and save the sources
@@ -227,6 +234,10 @@ Open these URLs, extract the visible source material into a Markdown artifact, a
 
 ```text
 Collect sources for a web-backed research note on the current software engineering job market. Keep the artifact factual, not a final report.
+```
+
+```text
+Research the current entry-level software job market and prepare the inputs for a stakeholder Markdown brief. Save the web artifact, refresh inventory, and hand off the relevant artifacts for distillation.
 ```
 
 Default output path pattern:

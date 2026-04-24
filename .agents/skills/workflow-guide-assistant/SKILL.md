@@ -47,6 +47,8 @@ The standard repo flow is:
 4. Use `artifacts-to-json-distiller` to create a compact JSON digest.
 5. Use `artifact-digest-report-writer` to create the report variant the user wants.
 
+Keep this canonical flow intact. If the user enters through a report-oriented web research request, you may explain that `harness-web-research-scraper` can prepare digest-ready inputs by collecting sources first and then delegating relevant distillation work, but the final Markdown writing still belongs to `artifact-digest-report-writer`.
+
 ## File orientation
 
 Be ready to explain the role of:
@@ -71,4 +73,3 @@ Call out likely causes and the next check to make when the user reports:
 - digest too thin for a strong report
 
 Prefer the smallest useful next action over a long explanation.
-
